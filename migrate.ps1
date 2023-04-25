@@ -1,14 +1,5 @@
 $ErrorActionPreference = "Stop"
 
-$sourceFolder = "..\simcity4-backup"
-$files = Get-ChildItem $sourceFolder
-
-foreach ($file in $files) {
-    Write-Host "Migrating $($file.BaseName)"
-
-    MigrateRegions
-}
-
 function MigrateRegions() {
     $destinationFolder = ".\Regions"
 
@@ -33,4 +24,13 @@ function MigrateRegions() {
     else {
         Write-Host "No changes detected for $($file.BaseName)"
     }
+}
+
+$sourceFolder = "..\simcity4-backup"
+$files = Get-ChildItem $sourceFolder
+
+foreach ($file in $files) {
+    Write-Host "Migrating $($file.BaseName)"
+
+    MigrateRegions
 }
