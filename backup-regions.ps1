@@ -23,7 +23,7 @@ if ($status) {
     Invoke-Expression "git add ."
 
     $datetime = Get-Date
-    Invoke-Expression "git commit -m `"chore: $($datetime.ToString("yyyy-mm-dd_hh-mm-ss"))`""
+    Invoke-Expression "git commit -m `"chore: $($datetime.ToString("yyyy-MM-dd_hh-mm-ss"))`""
     Invoke-Expression "git push origin master"
 }
 else {
